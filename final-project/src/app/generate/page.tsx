@@ -57,7 +57,7 @@ export default function GeneratePitchCard() {
 
     }
     catch(err){
-      console.log(err)
+      // console.log(err)
       toast.error("Couldn't generate pitch")
     }
     finally{
@@ -87,7 +87,7 @@ export default function GeneratePitchCard() {
       router.push("/dashboard");
     }
     catch(error){
-        console.error("Failed to save to DB: ",error)
+      console.error("Failed to save to DB "/*,error*/)
     }
     finally{
       setSaving(false)

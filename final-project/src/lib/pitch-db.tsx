@@ -11,8 +11,8 @@ export async function savePitchToDB({
     body: string;
     user_id: string;
     }) {
-    console.log(title,"\n",body,"\n",user_id)
-    console.log(user_id)
+    // console.log(title,"\n",body,"\n",user_id)
+    // console.log(user_id)
 
     const { error } = await supabase.from("pitches").insert([
         {
@@ -23,7 +23,7 @@ export async function savePitchToDB({
     ]);
 
     if (error) {
-        console.error("Error saving pitch:", error.message);
+        console.error("Error saving pitch:"/*, error.message*/);
         return {"message":"Unable to save pitch"};
     }
     else{
@@ -41,7 +41,7 @@ export async function getUserPitchesWithEmail() {
   } = await supabase.auth.getUser();
 
   if (userError || !user) {
-    console.error("User fetch error:", userError?.message);
+    console.error("User fetch error"/*, userError?.message*/);
     return { email: null, pitches: [], count: 0 };
   }
 
@@ -53,11 +53,11 @@ export async function getUserPitchesWithEmail() {
     .order("created_at", { ascending: false });
 
   if (error) {
-    console.error("Error fetching pitches:", error.message);
+    console.error("Error fetching pitches" /*error.message*/);
     return { email: user.email, pitches: [], count: 0 };
   }
   else{
-    console.log("Fetched data successfully", user.email, pitches, pitches.length)
+    console.log("Fetched data successfully" /*user.email, pitches, pitches.length*/)
   }
 
   return {
@@ -74,12 +74,12 @@ export async function saveChangesToDb(pitchId:string, newTitle:string, newBody:s
         .eq("id", pitchId);
 
     if (error) {
-        console.error("Error updating pitch:", error.message);
+        console.error("Error updating pitch"/*, error.message*/);
         //alert("Failed to save changes.");
         return {"status":"danger","message":"Failed to save changes"};;
     }
 
-    console.log("Pitch updated:", data);
+    console.log("Pitch updated"/*, data*/);
     return {"status":"success","message":"Changes saved successfully."};
 }
 
@@ -90,7 +90,7 @@ export async function deletePitchFromDb(pitchId:string) {
     .eq("id", pitchId);
 
   if (error) {
-    console.error("Error deleting pitch:", error.message);
+    console.error("Error deleting pitch", /*error.message*/);
     //alert("Failed to delete pitch.");
     return {"status":"danger","message":"Failed to delete pitch."};
   }

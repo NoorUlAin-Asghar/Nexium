@@ -28,7 +28,7 @@ export async function POST(req: Request) {
     const contentType = response.headers.get("content-type");
     if (!contentType?.includes("application/json")) {
       const html = await response.text();
-      console.error("Received non-JSON response:\n", html);
+      console.error("Received non-JSON response\n"/*, html*/);
       return NextResponse.json({ error: "Non-JSON response from Hugging Face API" }, { status: 500 });
     }
 
@@ -36,14 +36,14 @@ export async function POST(req: Request) {
     //to handle error from hugging face
     if (!response.ok || result?.error) {
       const errorMessage = result?.error?.message;
-      console.error("Hugging Face Error:", errorMessage);
+      console.error("Hugging Face Error"/*, errorMessage*/);
       return NextResponse.json({ error: errorMessage }, { status: 500 });
     }
     //else return generated pitch
     const pitch = result.choices?.[0]?.message?.content ?? "No pitch generated.";
     return NextResponse.json({ pitch });
   } catch (err) {
-    console.error("Internal Server Error:", err);
+    console.error("Internal Server Error", /*err*/);
     return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
   }
 }

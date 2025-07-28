@@ -65,7 +65,7 @@ export default function Dashboard() {
       setPitches(data?.pitches || []);
       setCount(data?.count || 0);
     } catch (error) {
-      console.error("Failed to get Data", error);
+      console.error("Failed to get Data");
     }
     finally{
       setLoading(false);
@@ -80,7 +80,8 @@ export default function Dashboard() {
   const editPitch = async (id: string, newTitle: string, newBody: string) => {
     try{
       setLoading(true);
-      console.log("Saving", id, newTitle, newBody);
+      console.log("Saving")
+      // console.log("Saving", id, newTitle, newBody);
       const res=await saveChangesToDb(id,newTitle,newBody)
       setMessage(res.message);
       setStatus(res.status)
@@ -94,7 +95,8 @@ export default function Dashboard() {
   const deletePitch = async (id: string) => {
     try{
       setLoading(true)
-      console.log("Deleting", id);
+      console.log("Deleting")
+      // console.log("Deleting", id);
       const res=await deletePitchFromDb(id)
       setMessage(res.message);
       setStatus(res.status)
