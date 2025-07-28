@@ -53,7 +53,7 @@ Pitch Writer is a sleek, personalized pitch generation tool powered by AI. You c
 ## 📄 Documentation
 
 See full documentation at: [`/docs`](https://pitch-writer.vercel.app/docs)  
-Or check out [`DocumentationPage.jsx`](./app/docs/page.tsx) in the codebase.
+Or check out [`Documentation Page`](./src/app/docs/page.tsx) in the codebase.
 
 ---
 
