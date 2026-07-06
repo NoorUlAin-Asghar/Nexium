@@ -1,10 +1,10 @@
-# 🚀 Nexium – AI-Powered Web Applications
+# 🚀 Nexium – AI Powered Web Applications
 
 A collection of modern web applications built with **Next.js**, **TypeScript**, and **Tailwind CSS**, showcasing AI integrations, API consumption, authentication, database management, and responsive UI design.
 
 ---
 
-# 🛠 Tech Stack
+## 🛠 Tech Stack
 
 Across the repository, the projects utilize:
 
@@ -21,7 +21,7 @@ Across the repository, the projects utilize:
 
 ---
 
-# 📁 Repository Structure
+## 📁 Repository Structure
 
 ```text
 Nexium/
@@ -126,7 +126,7 @@ An AI-powered pitch generation platform for creating personalized job, freelance
 
 ---
 
-# 🚀 Getting Started
+## 🚀 Getting Started
 
 Clone the repository:
 
@@ -172,7 +172,7 @@ http://localhost:3000
 
 ---
 
-# 🔑 Environment Variables
+## 🔑 Environment Variables
 
 Some projects require API keys and Supabase credentials.
 
@@ -191,7 +191,7 @@ Refer to each project's README for complete setup instructions.
 
 ---
 
-# 📚 Documentation
+## 📚 Documentation
 
 Each project contains its own detailed README with:
 
@@ -204,6 +204,6 @@ Each project contains its own detailed README with:
 
 ---
 
-# 📄 License
+## 📄 License
 
 This repository is licensed under the MIT License.
